@@ -6,16 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nw .",
-    "build": "build --tasks win-x86 --mirror https://dl.nwjs.io/ ."
+    "build": "build --tasks win-x86, win-x64 --mirror https://dl.nwjs.io/ ."
   },
-  "keywords": [],
+  "keywords": [
+    "Arduino",
+    "ui",
+    "nwjs",
+    "iot",
+    "hydrology"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "window": {
     "width": 500,
     "height": 700,
     "resizable": false,
-    "icon": "icon.png"
+    "icon": "assets/images/icon.png"
   },
   "build": {
     "nwVersion": "v0.71.0",
@@ -28,28 +34,13 @@
       "**/*"
     ],
     "excludes": [
-      "e2e/**/*",
-      "src/**/*",
       "tests/**/*",
       "public/**/*",
-      "dist-vue/**/*.js.map",
-      "dist-vue/**/*.css.map",
-      "dist-vue/**/*-legacy*",
-      ".browserslistrc",
       ".eslintrc",
       ".gitignore",
       ".editorconfig",
-      "babel.config.js",
-      "CODE_OF_CONDUCT.md",
-      "cypress.json",
-      "jest.config.js",
-      "nightwatch.conf.js",
-      "nightwatch.json",
       "package-lock.json",
-      "screenshot.png",
-      "selenium-debug.log",
-      "postcss.config.js",
-      "vue.config.js"
+      "screenshot.png"
     ],
     "strippedProperties": [
       "ManifestComments",
@@ -64,14 +55,15 @@
       "chromium-args": "--enable-spell-checking"
     },
     "win": {
-      "icon": "icon.ico"
+      "icon": "assets/images/icon.ico"
     },
     "mac": {},
     "nsis": {
-      "icon": "icon.ico",
-      "unIcon": "icon.ico",
+      "icon": "assets/images/icon.ico",
+      "unIcon": "assets/images/icon.ico",
       "languages": [
-        "English"
+        "English",
+        "Spanish"
       ],
       "diffUpdaters": false,
       "hashCalculation": true
