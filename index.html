@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ESTACIÓN CLIMATOLÓGICA</title>
+</head>
+
+<body>
+    <div class="app selector">
+        <label class="selector-label" for="idBaud">CONTROL DE SENSORES</label>
+        <select class="selector-options" name="idBaud" id="idBaud">
+            <option disabled selected>Elija una opcion</option>
+            <option value='9600'>9600</option>
+            <option value='57600'>57600</option>
+            <option value='115200'>115200</option>
+        </select>
+        <div class="selector-button" style="display: none" id="idConnect">
+            CONECTAR</div>
+        <div class="selector-button close" style="display:none" id="idClose">
+            DETENER</div>
+        <div class="selector-button save" style="display:none" id="idReport">
+            REPORTE</div>
+    </div>
+    <div class="app chart">
+        <canvas class="app-chart" id="line"></canvas>
+    </div>
+    <div id="temp" class="app temp">
+        <div class="app-title">
+            Temperatura °C
+        </div>
+        <div class="app-info">
+            <div class="app-info-block">
+                <div class="block-title">Máximo</div>
+                <div class="block-data" id="tempMax"></div>
+            </div>
+            <div class="app-info-block">
+                <div class="block-title">Mínimo</div>
+                <div class="block-data" id="tempMin"></div>
+            </div>
+            <div class="app-info-block">
+                <div class="block-title">Promedio</div>
+                <div class="block-data" id="tempAver"></div>
+            </div>
+        </div>
+    </div>
+    <div id="humi" class="app humi">
+        <div class="app-title">
+            Humedad (%)
+        </div>
+        <div class="app-info">
+            <div class="app-info-block">
+                <div class="block-title">Máximo</div>
+                <div class="block-data" id="humiMax"></div>
+            </div>
+            <div class="app-info-block">
+                <div class="block-title">Mínimo</div>
+                <div class="block-data" id="humiMin"></div>
+            </div>
+            <div class="app-info-block">
+                <div class="block-title">Promedio</div>
+                <div class="block-data" id="humiAver"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/locale/es.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

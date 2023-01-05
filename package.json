@@ -1,0 +1,80 @@
+{
+  "name": "mq135",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nw .",
+    "build": "build --tasks win-x86 --mirror https://dl.nwjs.io/ ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "window": {
+    "width": 500,
+    "height": 700,
+    "resizable": false,
+    "icon": "icon.png"
+  },
+  "build": {
+    "nwVersion": "v0.71.0",
+    "nwFlavor": "normal",
+    "targets": [
+      "zip",
+      "nsis7z"
+    ],
+    "files": [
+      "**/*"
+    ],
+    "excludes": [
+      "e2e/**/*",
+      "src/**/*",
+      "tests/**/*",
+      "public/**/*",
+      "dist-vue/**/*.js.map",
+      "dist-vue/**/*.css.map",
+      "dist-vue/**/*-legacy*",
+      ".browserslistrc",
+      ".eslintrc",
+      ".gitignore",
+      ".editorconfig",
+      "babel.config.js",
+      "CODE_OF_CONDUCT.md",
+      "cypress.json",
+      "jest.config.js",
+      "nightwatch.conf.js",
+      "nightwatch.json",
+      "package-lock.json",
+      "screenshot.png",
+      "selenium-debug.log",
+      "postcss.config.js",
+      "vue.config.js"
+    ],
+    "strippedProperties": [
+      "ManifestComments",
+      "scripts",
+      "devDependencies",
+      "build"
+    ],
+    "overriddenProperties": {
+      "main": "index.html",
+      "node-remote": "index.html",
+      "node-main": "index.html",
+      "chromium-args": "--enable-spell-checking"
+    },
+    "win": {
+      "icon": "icon.ico"
+    },
+    "mac": {},
+    "nsis": {
+      "icon": "icon.ico",
+      "unIcon": "icon.ico",
+      "languages": [
+        "English"
+      ],
+      "diffUpdaters": false,
+      "hashCalculation": true
+    }
+  }
+}
